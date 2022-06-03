@@ -27,8 +27,6 @@
 const locale = useLocale()
 
 const changeLanguage = (language: string) => {
-  console.log("hello")
   locale.value = language
-  console.log({locale})
 }
 </script>

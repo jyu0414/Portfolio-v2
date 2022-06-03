@@ -3,6 +3,7 @@ import { defineNuxtConfig } from 'nuxt'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
+  ssr: false,
   app: {
     head: {
       title: '佐々木 雄司',

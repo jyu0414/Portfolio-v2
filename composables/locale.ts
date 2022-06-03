@@ -9,11 +9,16 @@ export const useDefaultLocale = (fallback = 'en-US') => {
     if (reqLocale) {
       locale.value = reqLocale
     }
+    console.log("server")
+    console.log({locale})
   } else if (process.client) {
     const navLang = navigator.language
     if (navLang) {
       locale.value = navLang
     }
+    console.log("client")
+    console.log({locale})
   }
+  
   return locale
 }
