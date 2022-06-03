@@ -31,6 +31,18 @@ export default defineNuxtPlugin((nuxtApp) => {
           } catch (e) {}
         }
         s.parentNode.insertBefore(tk, s)
+      },
+      localizedDate: (dateString) => {
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        const date = new Date(dateString)
+        const locale = useLocale()
+        const month = locale.value == "ja-JP" ? (date.getMonth() + 1) + "月" : months[date.getMonth()]
+        const year = locale.value == "ja-JP" ? date.getFullYear() + "年" : date.getFullYear()
+        return {
+          month,
+          year,
+          full: locale.value == "ja-JP" ? `${year} ${month}` : `${month} ${year}`
+        }
       }
     }
   }

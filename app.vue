@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto max-w-6xl font-body">
+  <div class="container mx-auto max-w-6xl font-ja leading-loose text-primary">
     <header class="mb-8">
       <div class="my-8 text-right">
         <button @click="changeLanguage('ja-JP')">JA</button> / <button @click="changeLanguage('en-US')">EN</button>

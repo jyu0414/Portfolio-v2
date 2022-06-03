@@ -7,9 +7,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        body: ["Kyoukasho ICA Medium", "sans-serif"]
+        ja: ["ten-mincho-text", "serif"]
       }
     },
+    textColor: {
+      primary: "#0C2340",
+      secondary: "#787A80"
+    }
   },
   plugins: []
 }
