@@ -1,8 +1,8 @@
 <template>
   <indent-article class="md:w-3/4">
     <template v-slot:title>
-      <span class="text-accent">佐々木 雄司</span>
-      <span class="text-secondary">Sasaki, Yuji</span>
+      <span class="text-accent mr-3">{{$localize("佐々木 雄司", "Sasaki, Yuji")}}</span>
+      <span class="text-secondary">{{$localize("Sasaki, Yuji", "佐々木 雄司")}}</span>
     </template>
     <template v-slot:content>
       <section
@@ -11,10 +11,10 @@
         class="my-6"
       >
         <h2 v-if="item.isTitleNeeded">
-          {{ locale == 'ja-JP' ? item.title : item.titleEnglish }}
+          {{ $localize(item.title, item.titleEnglish) }}
         </h2>
         <span
-          v-html="locale == 'ja-JP' ? item.content : item.contentEnglish"
+          v-html="$localize(item.content, item.contentEnglish)"
         ></span>
       </section>
     </template>
@@ -23,5 +23,4 @@
 
 <script setup lang="ts">
 const { items: profileContents } = await fetchProfile()
-const locale = useLocale()
 </script>

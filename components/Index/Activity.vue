@@ -1,8 +1,6 @@
 <template>
   <indent-article>
-    <template v-slot:title>{{
-      locale == 'ja-JP' ? '活動' : 'Activities'
-    }}</template>
+    <template v-slot:title>{{ $localize('活動', 'Activities') }}</template>
     <template v-slot:content>
       <table>
         <tbody>
@@ -13,16 +11,14 @@
               {{ $localizedDate(item.endDate).full }}
               </span>
               <span v-if="item.isCurrent">
-                {{ locale == 'ja-JP' ? '現在' : 'current' }}
+                {{ $localize("現在", "current") }}
               </span>
             </td>
             <td>
-              {{
-                locale == 'ja-JP' ? item.organization : item.organizationEnglish
-              }}
+              {{ $localize(item.organization, item.organizationEnglish) }}
             </td>
             <td>
-              {{ locale == 'ja-JP' ? item.jobTitle : item.jobTitleEnglish }}
+              {{ $localize(item.jobTitle, item.jobTitleEnglish) }}
             </td>
           </tr>
         </tbody>
@@ -33,5 +29,4 @@
 
 <script setup lang="ts">
 const { items: activity } = await fetchActivity()
-const locale = useLocale()
 </script>

@@ -7,17 +7,13 @@ export const useDefaultLocale = (fallback = 'en-US') => {
     const nuxtApp = useNuxtApp()
     const reqLocale = nuxtApp.ssrContext?.req.headers['accept-language']?.split(',')[0]
     if (reqLocale) {
-      locale.value = reqLocale
+      locale.value = reqLocale.slice(0,2)
     }
-    console.log("server")
-    console.log({locale})
   } else if (process.client) {
     const navLang = navigator.language
     if (navLang) {
-      locale.value = navLang
+      locale.value = navLang.slice(0,2)
     }
-    console.log("client")
-    console.log({locale})
   }
   
   return locale

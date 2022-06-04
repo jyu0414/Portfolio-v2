@@ -10,10 +10,19 @@ module.exports = {
         ja: ["ten-mincho-text", "serif"]
       }
     },
+    colors: {
+      primary: "#0C2340",
+      secondary: "#ADAFB8",
+      white: "#FFFFFF",
+      black: "#000000"
+    },
     textColor: {
       primary: "#0C2340",
-      secondary: "#787A80"
+      secondary: "#ADAFB8",
+      white: "#FFFFFF",
+      black: "#000000"
     }
   },
-  plugins: []
+  plugins: [],
+  darkMode: 'media'
 }

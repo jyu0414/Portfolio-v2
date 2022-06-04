@@ -1,8 +1,6 @@
 <template>
   <indent-article>
-    <template v-slot:title>{{
-      locale == 'ja-JP' ? '経歴' : 'Biography'
-    }}</template>
+    <template v-slot:title>{{ $localize('経歴', 'Biography') }}</template>
     <template v-slot:content>
       <table>
         <tbody>
@@ -17,7 +15,7 @@
                 >{{ $localizedDate(item.date).year }}</span
               >
             </td>
-            <td class="text-secondary pr-4">
+            <td class="pr-4 text-secondary">
               <span
                 v-if="
                   index == 0 ||
@@ -30,7 +28,7 @@
               >
             </td>
             <td>
-              {{ locale == 'ja-JP' ? item.title : item.titleEnglish }}
+              {{ $localize(item.title, item.titleEnglish) }}
             </td>
           </tr>
         </tbody>
@@ -41,5 +39,4 @@
 
 <script setup lang="ts">
 const { items: history } = await fetchHistory()
-const locale = useLocale()
 </script>

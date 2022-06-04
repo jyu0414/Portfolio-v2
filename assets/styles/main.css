@@ -6,6 +6,9 @@
   html {
     @apply font-ja;
     @apply text-primary;
+    @apply dark:text-white;
+    @apply bg-white;
+    @apply dark:bg-primary;
   }
   p {
     @apply leading-loose;
@@ -15,6 +18,12 @@
   li {
     @apply my-1;
   }
+
+  h1 {
+    @apply my-8;
+    @apply text-2xl;
+  }
+  
   h2 {
     @apply text-secondary;
     @apply mt-4;
@@ -25,7 +34,7 @@
     @apply w-full;
   }
   tbody {
-    @apply divide-y;
+
   }
   tr {
     @apply h-16; 

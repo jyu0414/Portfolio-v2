@@ -1,17 +1,26 @@
 <template>
-  <div class="md:container mx-8 md:mx-auto md:max-w-6xl">
+  <div class="mx-3 md:mx-8 xl:mx-auto max-w-6xl">
     <header class="mb-8">
       <div class="my-8 text-right">
-        <button @click="changeLanguage('ja-JP')">JA</button> / <button @click="changeLanguage('en-US')">EN</button>
+        <button :class="{'text-secondary': locale !== 'ja'}" @click="changeLanguage('ja')">JA</button> /
+        <button :class="{'text-secondary': locale === 'ja'}" @click="changeLanguage('en')">EN</button>
       </div>
-      <a href="/">
-        <img class="mx-auto my-8 w-32" src="signature.jpeg" alt="" width="256" />
-      </a>
+      <nuxt-link to="/">
+        <signature class="mx-auto my-8 w-32 dark:fill-white"/>
+      </nuxt-link>
       <nav class="mx-auto flex max-w-2xl flex-row">
-        <a class="basis-1/4 text-center" href="/">{{locale == "ja-JP" ? "紹介": "About"}}</a>
-        <a class="basis-1/4 text-center" href="/">{{locale == "ja-JP" ? "作品": "Works"}}</a>
-        <a class="basis-1/4 text-center" href="/">{{locale == "ja-JP" ? "出版": "Publications"}}</a>
-        <a class="basis-1/4 text-center" href="/">{{locale == "ja-JP" ? "連絡": "Contact"}}</a>
+        <nuxt-link  class="basis-1/4 text-center" to="/">{{
+          $localize('紹介', 'About')
+        }}</nuxt-link >
+        <nuxt-link  class="basis-1/4 text-center" to="/works">{{
+          $localize('作品', 'Works')
+        }}</nuxt-link >
+        <nuxt-link  class="basis-1/4 text-center" to="/publications">{{
+          $localize('出版', 'Publications')
+        }}</nuxt-link >
+        <nuxt-link  class="basis-1/4 text-center" to="/contact">{{
+          $localize('連絡', 'Contact')
+        }}</nuxt-link >
       </nav>
     </header>
     <main>
@@ -25,7 +34,6 @@
 
 <script setup lang="ts">
 const locale = useLocale()
-
 const changeLanguage = (language: string) => {
   locale.value = language
 }
