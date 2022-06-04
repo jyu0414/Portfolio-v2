@@ -4,6 +4,17 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
   ssr: false,
+  css: ["@/assets/styles/main.css"],
+  build: {
+    postcss: {
+      postcssOptions: {
+        plugins: {
+          tailwindcss: {},
+          autoprefixer: {},
+        },
+      },
+    },
+  },
   app: {
     head: {
       title: '佐々木 雄司',

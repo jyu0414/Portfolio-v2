@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-ja;
+    @apply text-primary;
+  }
+  p {
+    @apply leading-loose;
+    @apply my-3;
+    text-indent: 2em;
+  }
+  li {
+    @apply my-1;
+  }
+  h2 {
+    @apply text-secondary;
+    @apply mt-4;
+    @apply mb-2;
+    @apply font-bold;
+  }
+  table {
+    @apply w-full;
+  }
+  tbody {
+    @apply divide-y;
+  }
+  tr {
+    @apply h-16; 
+  }
+  td {
+    @apply mr-4;
+  }
+}
