@@ -1,5 +1,5 @@
 import { createClient } from 'newt-client-js'
-import { Career, NewtConfig, Paper, Profile, Resume, Statement, TopImage } from '@/@types/newt'
+import { Career, Lecture, Media, NewtConfig, Paper, Patent, Profile, Publish, Resume, Statement, TopImage } from '@/@types/newt'
 
 const config: NewtConfig  = {
   spaceUid: 'yuji',
@@ -78,6 +78,50 @@ export const fetchPapers = async () => {
     modelUid: 'paper',
     query: {
       order: ['year', 'month']
+    }
+  })
+  return response
+}
+
+export const fetchPatents = async () => {
+  const response = await client.getContents<Patent>({
+    appUid: config.appUid,
+    modelUid: 'patent',
+    query: {
+      order: ['number']
+    }
+  })
+  return response
+}
+
+export const fetchLectures = async () => {
+  const response = await client.getContents<Lecture>({
+    appUid: config.appUid,
+    modelUid: 'lecture',
+    query: {
+      order: ['date']
+    }
+  })
+  return response
+}
+
+export const fetchPublishes = async () => {
+  const response = await client.getContents<Publish>({
+    appUid: config.appUid,
+    modelUid: 'publish',
+    query: {
+      order: ['date']
+    }
+  })
+  return response
+}
+
+export const fetchMedia = async () => {
+  const response = await client.getContents<Media>({
+    appUid: config.appUid,
+    modelUid: 'media',
+    query: {
+      order: ['date']
     }
   })
   return response

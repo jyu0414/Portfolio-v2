@@ -1,4 +1,4 @@
-import { Content } from 'newt-client-js'
+import { Content, Content, Content } from 'newt-client-js'
 
 const { Content } = require('newt-client-js');
 
@@ -32,7 +32,7 @@ interface TopImage extends Content {
 interface Resume extends Content {
   title: string
   titleEnglish: string
-  date: Date
+  date: string
   link: string
 }
 
@@ -41,8 +41,8 @@ interface Career extends Content {
   organizationEnglish: string
   jobTitle: string
   jobTitleEnglish: string
-  beginDate: Date
-  endDate: Date
+  beginDate: string
+  endDate: string
   isCurrent: boolean
 }
 
@@ -72,4 +72,33 @@ interface Work extends Content {
   description: string
   descriptionEnglish: string
   paper: [Paper]
+}
+
+interface Patent extends Content {
+  title: string
+  number: string
+  category: string
+  author: [Author]
+  link: string
+}
+
+interface Lecture extends Content {
+  title: string
+  date: string
+  place: string
+}
+
+interface Publish extends Content {
+  title: string
+  date: string
+  link: string
+  media: string
+  author: [Author]
+}
+
+interface Media extends Content {
+  title: string
+  date: string
+  link: string
+  media: string
 }
