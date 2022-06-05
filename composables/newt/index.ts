@@ -1,5 +1,5 @@
 import { createClient } from 'newt-client-js'
-import { Career, NewtConfig, Profile, Resume, Statement, TopImage } from '@/@types/newt'
+import { Career, NewtConfig, Paper, Profile, Resume, Statement, TopImage } from '@/@types/newt'
 
 const config: NewtConfig  = {
   spaceUid: 'yuji',
@@ -67,6 +67,17 @@ export const fetchCareer = async () => {
     modelUid: 'career',
     query: {
       order: ['beginDate', 'endDate']
+    }
+  })
+  return response
+}
+
+export const fetchPapers = async () => {
+  const response = await client.getContents<Paper>({
+    appUid: config.appUid,
+    modelUid: 'paper',
+    query: {
+      order: ['year', 'month']
     }
   })
   return response

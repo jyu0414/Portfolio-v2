@@ -52,13 +52,18 @@ interface Author {
 
 interface Paper extends Content {
   title: string
+  titleEnglish: string
   link: string
+  abstract: string
   category: string
   authors: [Author]
-  publishedAt: Date
   book: string
   bibtex: string
   cite: string
+  year: string
+  month: string
+  conference: string,
+  japaneseOnly: boolean
 }
 
 interface Work extends Content {
@@ -68,4 +73,3 @@ interface Work extends Content {
   descriptionEnglish: string
   paper: [Paper]
 }
-
