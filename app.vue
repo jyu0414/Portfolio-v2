@@ -9,16 +9,16 @@
         <signature class="mx-auto my-8 w-32 dark:fill-white"/>
       </nuxt-link>
       <nav class="mx-auto flex max-w-2xl flex-row">
-        <nuxt-link  class="basis-1/4 text-center" to="/">{{
+        <nuxt-link  class="basis-1/4 text-center no-underline" to="/">{{
           $localize('紹介', 'About')
         }}</nuxt-link >
-        <nuxt-link  class="basis-1/4 text-center" to="/works">{{
+        <nuxt-link  class="basis-1/4 text-center no-underline" to="/works">{{
           $localize('作品', 'Works')
         }}</nuxt-link >
-        <nuxt-link  class="basis-1/4 text-center" to="/publications">{{
+        <nuxt-link  class="basis-1/4 text-center no-underline" to="/publications">{{
           $localize('出版', 'Publications')
         }}</nuxt-link >
-        <nuxt-link  class="basis-1/4 text-center" to="/contact">{{
+        <nuxt-link  class="basis-1/4 text-center no-underline" to="/contact">{{
           $localize('連絡', 'Contact')
         }}</nuxt-link >
       </nav>
@@ -33,6 +33,7 @@
 </template>
 
 <script setup lang="ts">
+
 const locale = useLocale()
 const changeLanguage = (language: string) => {
   locale.value = language

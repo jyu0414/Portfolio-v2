@@ -4,7 +4,7 @@
       {{ $localize('連絡', 'Contact') }}
     </h1>
     <div class="gric-cols-1 grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
-      <a v-for="(item, key) in contact" :key="key" :href="item.link" target="_blank" rel="noopener noreferrer">
+      <a v-for="(item, key) in contact" :key="key" :href="item.link" target="_blank" rel="noopener noreferrer" class="no-underline">
         <div class="relative aspect-[1.618/1] border border-primary dark:border-white p-4">
           <span class="text-xl">{{ item.title }}</span>
           <address class="text-sm">{{ item.linkDisplay }}</address>
@@ -16,6 +16,10 @@
 </template>
 
 <script setup lang="ts">
+useHead({
+  title: 'Contact - SASAKI, Yuji'
+})
+
 const contact = [
   {
     title: 'Email',
@@ -60,4 +64,9 @@ const contact = [
     icon: 'linkedin'
   }
 ]
+const { $adobeFonts } = useNuxtApp()
+
+onMounted(() => {
+  $adobeFonts(document)
+})
 </script>

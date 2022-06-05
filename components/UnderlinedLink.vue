@@ -4,7 +4,6 @@
     :href="link"
     target="_blank"
     rel="noopener noreferrer"
-    class="underline decoration-secondary"
     ><cite>{{ label }}</cite></a
   >
   <cite v-else>{{ label }}</cite>

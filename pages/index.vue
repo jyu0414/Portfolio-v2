@@ -8,6 +8,8 @@
           :src="topImage.profileimage.src"
           itemprop="image"
           alt=""
+          width="667"
+          height="1000"
         />
       </div>
     </div>
@@ -19,6 +21,10 @@
 </template>
 
 <script setup lang="ts">
+useHead({
+  title: 'SASAKI, Yuji'
+})
+
 const topImage = await fetchTopImage()
 const { $adobeFonts } = useNuxtApp()
 

@@ -9,4 +9,13 @@
 </template>
 
 <script setup lang="ts">
+useHead({
+  title: 'Publications - SASAKI, Yuji'
+})
+
+const { $adobeFonts } = useNuxtApp()
+
+onMounted(() => {
+  $adobeFonts(document)
+})
 </script>

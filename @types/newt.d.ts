@@ -69,9 +69,15 @@ interface Paper extends Content {
 interface Work extends Content {
   title: string
   titleEnglish: string
+  subTitle: string
+  subTitleEnglish: string
   description: string
   descriptionEnglish: string
   paper: [Paper]
+  isCurrent: boolean
+  beginYear: string
+  endYear: string
+  image: [{ _id: string, src: string }]
 }
 
 interface Patent extends Content {
