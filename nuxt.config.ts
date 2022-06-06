@@ -47,12 +47,16 @@ export default defineNuxtConfig({
           content: 'https://sasaki.dev/ogp.png'
         },
         {
-          property: 'twitter:card',
+          name: 'twitter:card',
           content: 'summary_large_image'
         },
         {
-          property: 'twitter:creator',
+          name: 'twitter:creator',
           content: '@YujiSasaki89'
+        },
+        {
+          name: 'twitter:image',
+          content: 'https://sasaki.dev/ogp.png'
         },
         {
           hid: 'og:title',
