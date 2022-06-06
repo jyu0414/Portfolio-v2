@@ -18,6 +18,9 @@
 <script setup lang="ts">
 useHead({
   title: navigator.language.slice(0,2) == 'ja' ? '連絡 - 佐々木 雄司' : 'Contact - SASAKI, Yuji',
+  htmlAttrs: {
+    lang: navigator.language.slice(0,2) == 'ja' ? 'ja' : 'en'
+  },
   meta: [
     {
       name: 'description',

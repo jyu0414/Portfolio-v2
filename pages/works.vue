@@ -67,6 +67,9 @@
 <script setup lang="ts">
 useHead({
   title: navigator.language.slice(0,2) == 'ja' ? '作品 - 佐々木 雄司' : 'Works - SASAKI, Yuji',
+  htmlAttrs: {
+    lang: navigator.language.slice(0,2) == 'ja' ? 'ja' : 'en'
+  },
   meta: [
     {
       name: 'description',

@@ -11,6 +11,9 @@
 <script setup lang="ts">
 useHead({
   title: navigator.language.slice(0,2) == 'ja' ? '出版 - 佐々木 雄司' : 'Publications - SASAKI, Yuji',
+  htmlAttrs: {
+    lang: navigator.language.slice(0,2) == 'ja' ? 'ja' : 'en'
+  },
   meta: [
     {
       name: 'description',
