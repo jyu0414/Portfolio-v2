@@ -45,7 +45,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         }
       },
       localize: (ja, en) => {
-        return useLocale() == "ja" ? ja : en
+        return useLocale().value == "ja" ? ja : en
       }
     }
   }
