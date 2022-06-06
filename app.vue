@@ -6,7 +6,7 @@
         <button :class="{'text-secondary': locale === 'ja'}" @click="changeLanguage('en')">EN</button>
       </div>
       <nuxt-link to="/">
-        <signature class="mx-auto my-8 w-32 dark:fill-white"/>
+        <signature class="mx-auto my-8 w-32 dark:fill-white" />
       </nuxt-link>
       <nav class="mx-auto flex max-w-2xl flex-row">
         <nuxt-link  class="basis-1/4 text-center no-underline" to="/">{{

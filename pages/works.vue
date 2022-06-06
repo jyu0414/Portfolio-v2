@@ -66,7 +66,23 @@
 
 <script setup lang="ts">
 useHead({
-  title: 'Works - SASAKI, Yuji'
+  title: 'Works - SASAKI, Yuji',
+  meta: [
+    {
+      name: 'description',
+      content:
+        '佐々木雄司はAI体験教材の「AIEdu（kombu.）」，写真を眺めて次の旅先に出会う「Photrip」，次世代の貸借記録アプリ「Credy」，コンピュテーショナルシンキング育成教材「Kasgai」などを開発している．総務省に提案したサービス「Kids Stat」は総務大臣賞を受賞し現在総務省統計局によって運用されている．佐々木 雄司（ささき ゆうじ、1999年8月9日-）は，Bridge UI株式会社 社長，慶應義塾大学 政策メディア研究科 修士課程，エンジニア，研究者．専門はHuman-Computer Interaction，ユーザインタフェース，ソフトウェア開発，教育工学．WWDC17 Scholarship，STAT-DASHグランプリ優勝(総務大臣賞)，U22プログラミングコンテスト 商務情報政策局長賞などを受賞．2018年より孫正義育英財団 財団生．現在の研究は，新たな表計算インタフェース，脈波によるストレス測定を用いたUX評価手法，アイコンタクトを用いた家電操作，コンピュータを用いた創造性育成など．人間とコンピュータとのやりとりの最適化を通じて「思い通りに動くコンピュータ」を作り，人間の可能性を拡大することを目指している．また，プログラミングや人工知能に関する講座や，プログラミングや研究の指導も行っている．Yuji Sasaki has developed AIEdu (kombu.), an AI experience teaching material; Photrip, an application for viewing photos and finding your next travel destination; Credy, a next-generation loan recording application; and Kasgai, a teaching material for fostering computational thinking. Kids Stat, a service proposed to the Ministry of Internal Affairs and Communications, won the Minister of Internal Affairs and Communications Award and is currently operated by the Statistics Bureau of the Ministry of Internal Affairs and Communications. Yuji Sasaki (9 August 1999-) is the president of Bridge UI Corporation, a masters degree student at the Graduate School of Media and Governance, Keio University, an engineer and researcher. He specialises in Human-Computer Interaction, User Interface, Software Development and Educational Engineering, and has won the WWDC17 Scholarship, the STAT-DASH Grand Prix Championship (Minister of Internal Affairs and Communications Award), the U22 Programming Contest Commerce and Information Policy Bureau Director-General Award, etc. Scholar, Masa-Son Foundation since 2018. His current research includes a new spreadsheet interface, a UX evaluation method using pulse wave stress measurement, home appliance operation using eye contact, and computer-based creativity development. His aim is to create "computers that work the way you want" through optimising the interaction between humans and computers, and to expand human potential. It also offers courses on programming and artificial intelligence, as well as guidance on programming and research.'
+    },
+    {
+      name: 'author',
+      content: '佐々木 雄司'
+    },
+    {
+      name: 'keywords',
+      content:
+        '佐々木,雄司,Yuji,Sasaki,関西学院,慶應義塾大学,プログラマ,ソフトウェア,孫正義育英財団,Swift,プログラミング,Human-Computer Interaction,UI,User Interface,UX,教育工学,Kwansei Gakuin, Keio University, Programmer, Software, ユーザインタフェース, Masa-son Foundation, Programming, Creativity, Computational Thinking, 創造性, WWDC, kombu, kasgai, kids stat,キッズすたっと, e-stat junior, KabeCom, LuuX, Credy'
+    }
+  ]
 })
 
 const { items: _works } = await fetchWorks()
