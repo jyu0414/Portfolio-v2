@@ -1,7 +1,7 @@
 <template>
   <indent-article class="md:w-3/4">
     <template v-slot:title>
-      <span class="text-accent mr-3">{{$localize("佐々木 雄司", "Sasaki, Yuji")}} </span>
+      <span class="text-accent mr-3">{{$localize("佐々木 雄司", "Sasaki, Yuji")}}</span>&nbsp;
       <span class="text-secondary">{{$localize("Sasaki, Yuji", "佐々木 雄司")}}</span>
     </template>
     <template v-slot:content>
