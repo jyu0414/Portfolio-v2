@@ -3,7 +3,7 @@ import { m } from './dist/_nuxt/entry-d68a81e7.mjs'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-jsonld'],
   ssr: false,
   css: [
     '@/assets/styles/main.css',
