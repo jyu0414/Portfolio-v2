@@ -1,5 +1,4 @@
 import { defineNuxtConfig } from 'nuxt'
-import { m } from './dist/_nuxt/entry-d68a81e7.mjs'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -22,6 +21,9 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      htmlAttrs: {
+        prefix: 'og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#',
+      },
       title: 'SASAKI, Yuji',
       meta: [
         {
@@ -68,6 +70,18 @@ export default defineNuxtConfig({
         {
           property: 'twitter:creator',
           content: '@YujiSasaki89'
+        },
+        {
+          property: 'og:title',
+          content: 'Official Website - SASAKI, Yuji'
+        },
+        {
+          property: 'og:type',
+          content: 'website'
+        },
+        {
+          property: 'og:url',
+          content: 'https://sasaki.dev/'
         }
       ],
       link: [
@@ -98,8 +112,8 @@ export default defineNuxtConfig({
         },
         {
           rel: 'apple-touch-icon',
-          type: 'image/png',
-          href: '/apple-touch-icon-180x180.png'
+          href: '/apple-touch-icon-180x180.png',
+          sizez: '180x180'
         },
         {
           rel: 'mask-icon',
