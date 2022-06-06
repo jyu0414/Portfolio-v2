@@ -3,7 +3,8 @@ import { defineNuxtConfig } from 'nuxt'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', 'nuxt-jsonld'],
-  ssr: false,
+  ssr: true,
+  target: 'server',
   css: [
     '@/assets/styles/main.css',
     '@fortawesome/fontawesome-svg-core/styles.css',
@@ -26,6 +27,10 @@ export default defineNuxtConfig({
       },
       title: 'SASAKI, Yuji',
       meta: [
+        {
+          name: "theme-color",
+          content: "#ffffff"
+        },
         {
           hid: 'og:locale:alternate',
           property: 'og:locale:alternate',
