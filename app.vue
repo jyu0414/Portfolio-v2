@@ -5,6 +5,7 @@
         <button :class="{'text-secondary': locale !== 'ja'}" @click="changeLanguage('ja')">JA</button> /
         <button :class="{'text-secondary': locale === 'ja'}" @click="changeLanguage('en')">EN</button>
       </div>
+      {{locale}}
       <nuxt-link to="/">
         <signature class="mx-auto my-8 w-32 dark:fill-white" />
       </nuxt-link>
@@ -33,9 +34,12 @@
 </template>
 
 <script setup lang="ts">
-
 const locale = useLocale()
+
 const changeLanguage = (language: string) => {
   locale.value = language
 }
+
+
+
 </script>
