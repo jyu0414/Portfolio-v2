@@ -19,7 +19,8 @@
 useHead({
   title: navigator.language.slice(0,2) == 'ja' ? '連絡 - 佐々木 雄司' : 'Contact - SASAKI, Yuji',
   htmlAttrs: {
-    lang: navigator.language.slice(0,2) == 'ja' ? 'ja' : 'en'
+    lang: navigator.language.slice(0,2) == 'ja' ? 'ja' : 'en',
+    prefix: 'og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#'
   },
   meta: [
     {
