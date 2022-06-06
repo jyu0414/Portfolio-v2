@@ -24,7 +24,8 @@
 useHead({
   title: navigator.language.slice(0,2) == 'ja' ? '佐々木 雄司' : 'SASAKI, Yuji',
   htmlAttrs: {
-    lang: navigator.language.slice(0,2) == 'ja' ? 'ja' : 'en'
+    lang: navigator.language.slice(0,2) == 'ja' ? 'ja' : 'en',
+    prefix: 'og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#'
   },
   meta: [
     {
@@ -40,6 +41,18 @@ useHead({
       name: 'keywords',
       content:
         '佐々木,雄司,Yuji,Sasaki,関西学院,慶應義塾大学,プログラマ,ソフトウェア,孫正義育英財団,Swift,プログラミング,Human-Computer Interaction,UI,User Interface,UX,教育工学,Kwansei Gakuin, Keio University, Programmer, Software, ユーザインタフェース, Masa-son Foundation, Programming, Creativity, Computational Thinking, 創造性, WWDC'
+    },
+    {
+      property: 'og:title',
+      content: navigator.language.slice(0,2) == 'ja' ? '佐々木 雄司' : 'SASAKI, Yuji'
+    },
+    {
+      property: 'og:type',
+      content: 'website'
+    },
+    {
+      property: 'og:url',
+      content: 'https://sasaki.dev/'
     }
   ]
 })

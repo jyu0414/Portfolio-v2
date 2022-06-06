@@ -36,6 +36,38 @@ export default defineNuxtConfig({
         {
           name: 'keywords',
           content: '佐々木,雄司,Yuji,Sasaki,関西学院,慶應義塾大学,プログラマ,ソフトウェア,孫正義育英財団,Swift,プログラミング,Human-Computer Interaction,UI,User Interface,UX,教育工学'
+        },
+        {
+          property: 'og:site_name',
+          content: 'SASAKI, Yuji'
+        },
+        {
+          property: 'og:description',
+          content: 'Official Website of SASAKI, Yuji'
+        },
+        {
+          property: 'og:locale:alternate',
+          content: 'ja_JP'
+        },
+        {
+          property: 'og:locale:alternate',
+          content: 'en-US'
+        },
+        {
+          property: 'og:locale:alternate',
+          content: 'en-GB'
+        },
+        {
+          property: 'og:image',
+          content: 'https://sasaki.dev/ogp.png'
+        },
+        {
+          property: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        {
+          property: 'twitter:creator',
+          content: '@YujiSasaki89'
         }
       ],
       link: [
@@ -53,7 +85,30 @@ export default defineNuxtConfig({
           rel: 'alternate',
           href: 'https:://sasaki.dev/',
           hreflang: 'x-default'
-        }
+        },
+        {
+          rel: 'icon',
+          type: 'image/svg+xml',
+          href: '/favicon.svg'
+        },
+        {
+          rel: 'icon alternate',
+          type: 'image/png',
+          href: '/favicon.png'
+        },
+        {
+          rel: 'apple-touch-icon',
+          type: 'image/png',
+          href: '/apple-touch-icon-180x180.png'
+        },
+        {
+          rel: 'mask-icon',
+          href: '/safari-pinned-tab.svg'
+        },
+        {
+          rel: 'manifest',
+          href: '/manifest.json'
+        },
       ]
     }
   },

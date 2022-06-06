@@ -84,6 +84,19 @@ useHead({
       name: 'keywords',
       content:
         '佐々木,雄司,Yuji,Sasaki,関西学院,慶應義塾大学,プログラマ,ソフトウェア,孫正義育英財団,Swift,プログラミング,Human-Computer Interaction,UI,User Interface,UX,教育工学,Kwansei Gakuin, Keio University, Programmer, Software, ユーザインタフェース, Masa-son Foundation, Programming, Creativity, Computational Thinking, 創造性, WWDC, kombu, kasgai, kids stat,キッズすたっと, e-stat junior, KabeCom, LuuX, Credy'
+    },
+    {
+      property: 'og:title',
+      content: navigator.language.slice(0,2) == 'ja' ? '作品 - 佐々木 雄司' : 'Works - SASAKI, Yuji',
+      prefix: 'og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#'
+    },
+    {
+      property: 'og:type',
+      content: 'article'
+    },
+    {
+      property: 'og:url',
+      content: 'https://sasaki.dev/works'
     }
   ]
 })
