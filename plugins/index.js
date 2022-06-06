@@ -44,8 +44,8 @@ export default defineNuxtPlugin((nuxtApp) => {
           full: locale.value == "ja" ? `${year} ${month}` : `${month} ${year}`
         }
       },
-      localize: (ja, en, locale) => {
-        return locale == "ja" ? ja : en
+      localize: (ja, en) => {
+        return useLocale() == "ja" ? ja : en
       }
     }
   }

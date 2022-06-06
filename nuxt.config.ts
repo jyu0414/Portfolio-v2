@@ -3,8 +3,7 @@ import { defineNuxtConfig } from 'nuxt'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', 'nuxt-jsonld'],
-  ssr: true,
-  target: 'server',
+  ssr: false,
   css: [
     '@/assets/styles/main.css',
     '@fortawesome/fontawesome-svg-core/styles.css',
