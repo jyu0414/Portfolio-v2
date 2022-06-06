@@ -21,6 +21,9 @@
         <h1 class="my-0">
           {{ $localize(item.title, item.titleEnglish) }}
         </h1>
+        <p>
+          {{ $localize(item.subTitle, item.subTitleEnglish) }}
+        </p>
         <section
           class="mb-8 text-left"
           v-html="$localize(item.description, item.descriptionEnglish)"
