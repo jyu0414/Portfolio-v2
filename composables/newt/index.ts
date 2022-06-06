@@ -132,8 +132,10 @@ export const fetchWorks = async () => {
     appUid: config.appUid,
     modelUid: 'work',
     query: {
-      order: ['isCurrent', 'beginYear', 'endYear']
-    }
+      order: ['isCurrent', 'beginYear', 'endYear'],
+      depth: 2
+    },
+    
   })
   return response
 }

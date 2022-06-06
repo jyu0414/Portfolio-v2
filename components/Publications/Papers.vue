@@ -7,35 +7,7 @@
       <template v-slot:content>
         <div class="space-y-8">
           <article v-for="(item, key) in papers" :key="key">
-            <font-awesome-icon
-              v-if="isReviewed(item.category)"
-              icon="circle-check"
-              class="mr-2"
-            /><underlined-link :link="item.link" :label="$localize(item.title, item.titleEnglish)"/>
-
-            <div class="ml-8 text-secondary">
-              <div>
-                {{ item.authors.map((a) => a.data).join(', ') }} -
-                {{ item.book ? item.book : item.conference }},
-                {{ item.year }}
-                <button
-                  v-if="item.bibtex || item.cite"
-                  class="ml-2 hover:text-primary"
-                  @click="showCitation(item.cite, item.bibtex)"
-                >
-                  <font-awesome-icon icon="quote-right" />
-                </button>
-                <a
-                  v-if="item.link"
-                  :href="item.link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="ml-2 hover:text-primary"
-                >
-                  <font-awesome-icon icon="link" />
-                </a>
-              </div>
-            </div>
+            <paper-item :paper="item" @show="showCitation"/>
           </article>
         </div>
       </template>
@@ -86,19 +58,17 @@
 
 <script setup lang="ts">
 
-const { items: papers } = await fetchPapers()
+const { items: _papers } = await fetchPapers()
 
 let showModal = ref(false)
 let modalText = ref('')
 let modalBibTex = ref('')
 
-const isReviewed = (category: string) => {
-  return [
-    'paper-reviewed',
-    'conference-reviewed',
-    'domestic-conference-reviewed'
-  ].includes(category)
-}
+const papers = computed(() => {
+  return _papers.reverse()
+})
+
+
 
 const closeCitation = () => {
   showModal.value = false

@@ -78,6 +78,8 @@ interface Work extends Content {
   beginYear: string
   endYear: string
   image: [{ _id: string, src: string }]
+  award: [Resume]
+  link: [{ title: string, titleEnglish: string, url: string }]
 }
 
 interface Patent extends Content {

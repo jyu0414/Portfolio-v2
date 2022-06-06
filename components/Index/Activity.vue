@@ -28,5 +28,8 @@
 </template>
 
 <script setup lang="ts">
-const { items: activity } = await fetchActivity()
+const { items: _activity } = await fetchActivity()
+const activity = computed(() => {
+  return _activity.reverse()
+})
 </script>

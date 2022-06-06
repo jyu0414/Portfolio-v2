@@ -28,7 +28,17 @@
               >
             </td>
             <td>
-              {{ $localize(item.title, item.titleEnglish) }}
+              <a
+                v-if="item.link"
+                :href="item.link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ $localize(item.title, item.titleEnglish) }}</a
+              >
+              <span v-else>
+                {{ $localize(item.title, item.titleEnglish) }}</span
+              >
             </td>
           </tr>
         </tbody>
@@ -38,5 +48,8 @@
 </template>
 
 <script setup lang="ts">
-const { items: history } = await fetchHistory()
+const { items: _history } = await fetchHistory()
+const history = computed(() => {
+  return _history.reverse()
+})
 </script>

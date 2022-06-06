@@ -26,5 +26,8 @@
 </template>
 
 <script setup lang="ts">
-const { items: career } = await fetchCareer()
+const { items: _career } = await fetchCareer()
+const career = computed(() => {
+  return _career.reverse()
+})
 </script>
