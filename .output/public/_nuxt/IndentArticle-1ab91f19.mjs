@@ -1,1 +1,0 @@
-import{_ as o,b as c,c as n,e as s,x as t}from"./entry-9b043d8b.mjs";const r={},_={class:"my-4"},a={class:"md:ml-[80px] lg:ml-[160px]"};function l(e,m){return c(),n("article",_,[s("h1",null,[t(e.$slots,"title")]),s("div",a,[t(e.$slots,"content")])])}var i=o(r,[["render",l]]);export{i as _};
