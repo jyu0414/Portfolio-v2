@@ -4,13 +4,7 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
-    'nuxt-jsonld',
-    [
-      '@nuxtjs/google-gtag',
-      {
-        id: 'G-SVC7S03876'
-      }
-    ]
+    'nuxt-jsonld'
   ],
   ssr: true,
   css: [
