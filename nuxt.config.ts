@@ -111,17 +111,17 @@ export default defineNuxtConfig({
       link: [
         {
           rel: 'alternate',
-          href: 'https:://sasaki.dev/',
+          href: 'https://sasaki.dev/',
           hreflang: 'en'
         },
         {
           rel: 'alternate',
-          href: 'https:://sasaki.dev/',
+          href: 'https://sasaki.dev/',
           hreflang: 'ja'
         },
         {
           rel: 'alternate',
-          href: 'https:://sasaki.dev/',
+          href: 'https://sasaki.dev/',
           hreflang: 'x-default'
         },
         {
