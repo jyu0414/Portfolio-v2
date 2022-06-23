@@ -2,15 +2,11 @@ import { defineNuxtConfig } from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: [
-    '@nuxtjs/tailwindcss',
-    'nuxt-jsonld'
-  ],
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-jsonld'],
   ssr: true,
   css: [
     '@/assets/styles/main.css',
-    '@fortawesome/fontawesome-svg-core/styles.css',
-    '@nuxtjs/google-analytics'
+    '@fortawesome/fontawesome-svg-core/styles.css'
   ],
   build: {
     postcss: {
