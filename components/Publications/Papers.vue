@@ -6,7 +6,7 @@
       </template>
       <template v-slot:content>
         <div class="space-y-8">
-          <article v-for="(item, key) in papers" :key="key">
+          <article v-for="item in papers" :key="item._id">
             <paper-item :paper="item" @show="showCitation"/>
           </article>
         </div>
@@ -16,13 +16,27 @@
     <!--MODAL-->
     <div
       v-if="showModal"
-      @click="closeCitation"
       class="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overflow-x-hidden"
+      @click="closeCitation"
     >
-      <div class="relative mx-auto w-full max-w-xl">
-        <div class="rounded-lg bg-white p-5">
-          <div class="my-4">
-            <h3>{{ $localize('引用情報', 'Export Citations') }}</h3>
+      <div
+        class="relative mx-auto w-full max-w-xl"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="citation-modal-title"
+        @click.stop
+      >
+        <div class="rounded-lg bg-white p-5 text-primary">
+          <div class="my-4 flex items-center justify-between">
+            <h3 id="citation-modal-title">{{ $localize('引用情報', 'Export Citations') }}</h3>
+            <button
+              type="button"
+              class="ml-4 transition-colors duration-150 hover:text-secondary"
+              :aria-label="$localize('閉じる', 'Close')"
+              @click="closeCitation"
+            >
+              &times;
+            </button>
           </div>
 
           <table>
@@ -57,18 +71,15 @@
 </template>
 
 <script setup lang="ts">
-
 const { items: _papers } = await fetchPapers()
 
-let showModal = ref(false)
-let modalText = ref('')
-let modalBibTex = ref('')
+const showModal = ref(false)
+const modalText = ref('')
+const modalBibTex = ref('')
 
 const papers = computed(() => {
-  return _papers.reverse()
+  return [..._papers].reverse()
 })
-
-
 
 const closeCitation = () => {
   showModal.value = false
@@ -79,4 +90,18 @@ const showCitation = (text: string, bibtex: string) => {
   modalBibTex.value = bibtex
   showModal.value = true
 }
+
+const handleKeydown = (event: KeyboardEvent) => {
+  if (event.key === 'Escape') {
+    closeCitation()
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', handleKeydown)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeydown)
+})
 </script>

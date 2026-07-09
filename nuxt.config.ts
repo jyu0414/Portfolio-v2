@@ -27,23 +27,40 @@ export default defineNuxtConfig({
       title: 'SASAKI, Yuji',
       meta: [
         {
+          key: 'theme-color-light',
           name: 'theme-color',
-          content: '#ffffff'
+          content: '#ffffff',
+          media: '(prefers-color-scheme: light)'
         },
         {
-          hid: 'og:locale:alternate',
+          key: 'theme-color-dark',
+          name: 'theme-color',
+          content: '#0C2340',
+          media: '(prefers-color-scheme: dark)'
+        },
+        {
+          hid: 'og:locale',
+          key: 'og:locale',
+          property: 'og:locale',
+          content: 'ja_JP'
+        },
+        {
+          hid: 'og:locale:alternate-ja',
+          key: 'og:locale:alternate-ja',
           property: 'og:locale:alternate',
           content: 'ja_JP'
         },
         {
-          hid: 'og:locale:alternate',
+          hid: 'og:locale:alternate-en-us',
+          key: 'og:locale:alternate-en-us',
           property: 'og:locale:alternate',
-          content: 'en-US'
+          content: 'en_US'
         },
         {
-          hid: 'og:locale:alternate',
+          hid: 'og:locale:alternate-en-gb',
+          key: 'og:locale:alternate-en-gb',
           property: 'og:locale:alternate',
-          content: 'en-GB'
+          content: 'en_GB'
         },
         {
           hid: 'og:image',
@@ -133,7 +150,7 @@ export default defineNuxtConfig({
         {
           rel: 'apple-touch-icon',
           href: '/apple-touch-icon-180x180.png',
-          sizez: '180x180'
+          sizes: '180x180'
         },
         {
           rel: 'mask-icon',

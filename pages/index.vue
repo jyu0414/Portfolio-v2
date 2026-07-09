@@ -7,7 +7,7 @@
           class="rounded-lg md:mt-[160px]"
           :src="topImage.profileimage.src"
           itemprop="image"
-          alt=""
+          :alt="$localize('佐々木 雄司の写真', 'Portrait of Yuji Sasaki')"
           width="667"
           height="1000"
         />

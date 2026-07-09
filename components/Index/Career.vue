@@ -4,7 +4,7 @@
     <template v-slot:content>
       <table>
         <tbody>
-          <tr v-for="(item, index) in career" :key="index">
+          <tr v-for="item in career" :key="item._id">
             <td class="pr-4 text-secondary">
               {{ $localizedDate(item.beginDate).full }} -
               <span v-if="!item.isCurrent">

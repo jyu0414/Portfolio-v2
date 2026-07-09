@@ -9,6 +9,8 @@
     @apply dark:text-white;
     @apply bg-white;
     @apply dark:bg-primary;
+    font-feature-settings: "palt";
+    letter-spacing: 0.03em;
   }
   p {
     @apply leading-loose;
@@ -22,27 +24,52 @@
   a {
     @apply underline;
     @apply decoration-secondary;
+    @apply decoration-1;
+    @apply transition-colors;
+    @apply duration-150;
+    text-underline-offset: 0.2em;
+  }
+  a:hover {
+    @apply decoration-primary;
+    @apply dark:decoration-white;
+  }
+
+  :focus-visible {
+    outline: 2px solid #B0463C;
+    outline-offset: 2px;
+    border-radius: 1px;
+  }
+
+  ::selection {
+    background-color: #0C2340;
+    color: #FFFFFF;
+  }
+  @media (prefers-color-scheme: dark) {
+    ::selection {
+      background-color: #FFFFFF;
+      color: #0C2340;
+    }
   }
 
   h1 {
     @apply my-8;
     @apply text-2xl;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
   }
-  
+
   h2 {
     @apply text-secondary;
     @apply mt-4;
     @apply mb-2;
     @apply font-bold;
+    letter-spacing: 0.02em;
   }
   table {
     @apply w-full;
   }
-  tbody {
-
-  }
   tr {
-    @apply h-16; 
+    @apply h-16;
   }
   td {
     @apply mr-4;
