@@ -3,6 +3,7 @@
     v-if="isReviewed(paper.category)"
     icon="circle-check"
     class="mr-2"
+    aria-hidden="true"
   /><underlined-link
     :link="paper.link"
     :label="$localize(paper.title, paper.titleEnglish)"
@@ -15,19 +16,21 @@
       {{ paper.year }}
       <button
         v-if="paper.bibtex || paper.cite"
-        class="ml-2 hover:text-primary"
+        class="ml-2 transition-colors duration-150 hover:text-primary"
+        :aria-label="$localize('引用を表示', 'Show citation')"
         @click="emit('show', paper.cite, paper.bibtex)"
       >
-        <font-awesome-icon icon="quote-right" />
+        <font-awesome-icon icon="quote-right" aria-hidden="true" />
       </button>
       <a
         v-if="paper.link"
         :href="paper.link"
         target="_blank"
         rel="noopener noreferrer"
-        class="ml-2 hover:text-primary"
+        class="ml-2 transition-colors duration-150 hover:text-primary"
+        :aria-label="$localize('論文リンクを開く', 'Open paper link')"
       >
-        <font-awesome-icon icon="link" />
+        <font-awesome-icon icon="link" aria-hidden="true" />
       </a>
     </div>
   </div>
@@ -40,7 +43,7 @@ interface Props {
   paper: Paper
 }
 
-const props = defineProps<Props>()
+defineProps<Props>()
 const emit = defineEmits<{
   (e: 'show', text: string, bibtex: string): void
 }>()
@@ -52,6 +55,4 @@ const isReviewed = (category: string) => {
     'domestic-conference-reviewed'
   ].includes(category)
 }
-
-
 </script>

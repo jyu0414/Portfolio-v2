@@ -6,8 +6,8 @@
     </template>
     <template v-slot:content>
       <section
-        v-for="(item, index) in profileContents"
-        :key="index"
+        v-for="item in profileContents"
+        :key="item._id"
         class="my-6"
       >
         <h2 v-if="item.isTitleNeeded">

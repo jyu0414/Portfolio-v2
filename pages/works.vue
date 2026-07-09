@@ -7,10 +7,15 @@
     <article
       v-for="(item, index) in works"
       :key="index"
-      class="md:gap-1/12 my-16 md:flex"
+      class="my-16 md:flex md:gap-8"
     >
-      <div class="md:8 md:w-1/2 lg:m-16">
-        <img :src="item.image[0].src" alt="" />
+      <div class="md:w-1/2 lg:m-16">
+        <img
+          :src="item.image[0].src"
+          :alt="$localize(item.title, item.titleEnglish)"
+          loading="lazy"
+          class="rounded-lg"
+        />
       </div>
 
       <div class="mt-3 md:ml-16 md:w-5/12 md:text-right">
@@ -31,7 +36,7 @@
         <aside class="text-left">
           <section>
             <ul>
-              <li class="mb-4 flex" v-for="(link, key) in item.link">
+              <li class="mb-4 flex" v-for="(link, key) in item.link" :key="key">
                 <font-awesome-icon icon="link" class="mr-2" />
                 <a :href="link.url">{{
                   $localize(link.title, link.titleEnglish)
@@ -41,7 +46,7 @@
           </section>
           <section>
             <ul>
-              <li class="mb-4 flex" v-for="(study, key) in item.paper">
+              <li class="mb-4 flex" v-for="(study, key) in item.paper" :key="key">
                 <font-awesome-icon icon="graduation-cap" class="mr-2" />
                 <underlined-link
                   :link="study.link"
@@ -52,7 +57,7 @@
           </section>
           <section>
             <ul>
-              <li class="mb-4 flex" v-for="(award, key) in item.award">
+              <li class="mb-4 flex" v-for="(award, key) in item.award" :key="key">
                 <font-awesome-icon icon="crown" class="mr-2" />
                 {{ $localize(award.title, award.titleEnglish) }}
               </li>
@@ -106,7 +111,7 @@ const { items: _works } = await fetchWorks()
 
 
 const works = computed(() => {
-  return _works.reverse()
+  return [..._works].reverse()
 })
 
 onMounted(() => {

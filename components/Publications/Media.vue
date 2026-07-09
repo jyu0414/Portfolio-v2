@@ -7,7 +7,7 @@
       <template v-slot:content>
         <table>
           <tbody>
-            <tr v-for="(item, index) in media" :key="index">
+            <tr v-for="item in media" :key="item._id">
               <td class="pr-4 text-secondary">
                 {{ $localizedDate(item.date).full }}
               </td>

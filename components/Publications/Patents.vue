@@ -7,7 +7,7 @@
       <template v-slot:content>
         <table>
           <tbody>
-            <tr v-for="(item, index) in patents" :key="index">
+            <tr v-for="item in patents" :key="item._id">
               <td class="pr-4 text-secondary">
                 {{ item.number }}
               </td>

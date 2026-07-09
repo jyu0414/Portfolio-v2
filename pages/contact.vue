@@ -3,24 +3,24 @@
     <h1>
       {{ $localize('連絡', 'Contact') }}
     </h1>
-    <div class="gric-cols-1 grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+    <div class="grid-cols-1 grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
       <a
         v-for="(item, key) in contact"
         :key="key"
         :href="item.link"
         target="_blank"
         rel="noopener noreferrer"
-        class="no-underline"
+        class="group no-underline"
       >
         <div
-          class="relative aspect-[1.618/1] border border-primary p-4 dark:border-white"
+          class="relative aspect-[1.618/1] border border-primary p-4 transition-colors duration-150 hover:bg-primary/5 group-hover:border-primary dark:border-white dark:hover:bg-white/5 dark:group-hover:border-white"
         >
-          <span class="text-xl">{{ item.title }}</span>
-          <address class="text-sm">{{ item.linkDisplay }}</address>
+          <span class="text-xl group-hover:underline">{{ item.title }}</span>
+          <address class="not-italic text-sm text-secondary">{{ item.linkDisplay }}</address>
           <font-awesome-icon
             :icon="[item.iconCategory, item.icon]"
             size="2x"
-            class="absolute bottom-8 right-8"
+            class="absolute bottom-4 right-4"
           />
         </div>
       </a>

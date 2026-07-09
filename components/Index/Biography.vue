@@ -4,7 +4,7 @@
     <template v-slot:content>
       <table>
         <tbody>
-          <tr v-for="(item, index) in history" :key="index">
+          <tr v-for="(item, index) in history" :key="item._id">
             <td class="text-secondary">
               <span
                 v-if="
