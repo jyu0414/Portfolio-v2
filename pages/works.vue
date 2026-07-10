@@ -1,12 +1,13 @@
 <template>
   <div>
-    <h1>
+    <h1 class="hairline-heading inline-block">
       {{ $localize('作品', 'Works') }}
     </h1>
 
     <article
       v-for="(item, index) in works"
       :key="index"
+      v-reveal
       class="my-16 md:flex md:gap-8"
     >
       <div class="md:w-1/2 lg:m-16">

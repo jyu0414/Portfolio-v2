@@ -1,20 +1,23 @@
-import { createClient } from 'newt-client-js'
-import { Career, Lecture, Media, NewtConfig, Paper, Patent, Profile, Publish, Resume, Statement, TopImage, Work } from '@/@types/newt'
+import { createClient } from '@bridgeuidev/cms-client'
+import { Career, Lecture, Media, Paper, Patent, Profile, Publish, Resume, Statement, TopImage, Work } from '@/@types/newt'
 
-const config: NewtConfig  = {
-  spaceUid: 'yuji',
-  appUid: 'profile',
-  token: 'ATLioJLdyu1pVV8WU2ru24HD33rTyzLBpdcAd5_8jiA'
+// portfolio-cms (Firebase 製ヘッドレスCMS) の Newt 互換読み取りSDK。
+// spaceUid/appUid は Newt から流用、token は不要（公開read）で projectId に置き換わる。
+// projectId は runtimeConfig 経由（NUXT_PUBLIC_FIREBASE_PROJECT_ID で上書き可）。
+let _client: ReturnType<typeof createClient> | null = null
+const client = () => {
+  if (!_client) {
+    _client = createClient({
+      projectId: useRuntimeConfig().public.firebaseProjectId as string,
+      spaceUid: 'yuji',
+      appUid: 'profile'
+    })
+  }
+  return _client
 }
 
-const client = createClient({
-  spaceUid: config.spaceUid,
-  token: config.token
-})
-
 export const fetchProfile = async () => {
-  const response = await client.getContents<Profile>({
-    appUid: config.appUid,
+  const response = await client().getContents<Profile>({
     modelUid: 'profile',
     query: {
       order: ['priority']
@@ -24,24 +27,21 @@ export const fetchProfile = async () => {
 }
 
 export const fetchStatement = async () => {
-  const response = await client.getFirstContent<Statement>({
-    appUid: config.appUid,
+  const response = await client().getFirstContent<Statement>({
     modelUid: 'statement'
   })
   return response
 }
 
 export const fetchTopImage = async () => {
-  const response = await client.getFirstContent<TopImage>({
-    appUid: config.appUid,
+  const response = await client().getFirstContent<TopImage>({
     modelUid: 'topimage'
   })
   return response
 }
 
 export const fetchHistory = async () => {
-  const response = await client.getContents<Resume>({
-    appUid: config.appUid,
+  const response = await client().getContents<Resume>({
     modelUid: 'history',
     query: {
       order: ['date']
@@ -51,8 +51,7 @@ export const fetchHistory = async () => {
 }
 
 export const fetchActivity = async () => {
-  const response = await client.getContents<Career>({
-    appUid: config.appUid,
+  const response = await client().getContents<Career>({
     modelUid: 'activity',
     query: {
       order: ['beginDate', 'endDate']
@@ -62,8 +61,7 @@ export const fetchActivity = async () => {
 }
 
 export const fetchCareer = async () => {
-  const response = await client.getContents<Career>({
-    appUid: config.appUid,
+  const response = await client().getContents<Career>({
     modelUid: 'career',
     query: {
       order: ['beginDate', 'endDate']
@@ -73,8 +71,7 @@ export const fetchCareer = async () => {
 }
 
 export const fetchPapers = async () => {
-  const response = await client.getContents<Paper>({
-    appUid: config.appUid,
+  const response = await client().getContents<Paper>({
     modelUid: 'paper',
     query: {
       order: ['year', 'month']
@@ -84,8 +81,7 @@ export const fetchPapers = async () => {
 }
 
 export const fetchPatents = async () => {
-  const response = await client.getContents<Patent>({
-    appUid: config.appUid,
+  const response = await client().getContents<Patent>({
     modelUid: 'patent',
     query: {
       order: ['number']
@@ -95,8 +91,7 @@ export const fetchPatents = async () => {
 }
 
 export const fetchLectures = async () => {
-  const response = await client.getContents<Lecture>({
-    appUid: config.appUid,
+  const response = await client().getContents<Lecture>({
     modelUid: 'lecture',
     query: {
       order: ['date']
@@ -106,8 +101,7 @@ export const fetchLectures = async () => {
 }
 
 export const fetchPublishes = async () => {
-  const response = await client.getContents<Publish>({
-    appUid: config.appUid,
+  const response = await client().getContents<Publish>({
     modelUid: 'publish',
     query: {
       order: ['date']
@@ -117,8 +111,7 @@ export const fetchPublishes = async () => {
 }
 
 export const fetchMedia = async () => {
-  const response = await client.getContents<Media>({
-    appUid: config.appUid,
+  const response = await client().getContents<Media>({
     modelUid: 'media',
     query: {
       order: ['date']
@@ -128,8 +121,7 @@ export const fetchMedia = async () => {
 }
 
 export const fetchWorks = async () => {
-  const response = await client.getContents<Work>({
-    appUid: config.appUid,
+  const response = await client().getContents<Work>({
     modelUid: 'work',
     query: {
       order: ['isCurrent', 'beginYear', 'endYear'],

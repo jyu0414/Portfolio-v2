@@ -22,7 +22,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/vue-fontawesome": "^3.0.0-5",
     "@nuxtjs/fontawesome": "^1.1.2",
-    "newt-client-js": "^3.1.0",
+    "@bridgeuidev/cms-client": "^0.1.0",
     "nuxt-jsonld": "^2.0.3",
     "vue-gtag": "^2.0.1"
   }

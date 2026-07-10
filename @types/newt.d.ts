@@ -1,12 +1,4 @@
-import { Content, Content, Content } from 'newt-client-js'
-
-const { Content } = require('newt-client-js');
-
-type NewtConfig = {
-  spaceUid: string
-  appUid: string
-  token: string
-}
+import type { Content } from '@bridgeuidev/cms-client'
 
 interface Profile extends Content {
   title: string

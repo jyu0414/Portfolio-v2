@@ -7,7 +7,7 @@
       <template v-slot:content>
         <table>
           <tbody>
-            <tr v-for="item in publishes" :key="item._id">
+            <tr v-for="item in publishes" :key="item._id" v-reveal>
               <td class="pr-4 text-secondary">
                 {{$localizedDate(item.date).full}}
               </td>

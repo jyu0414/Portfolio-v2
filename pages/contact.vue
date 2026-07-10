@@ -3,6 +3,9 @@
     <h1>
       {{ $localize('連絡', 'Contact') }}
     </h1>
+    <client-only>
+      <lazy-wavy-rule class="mb-10" :seed="29" />
+    </client-only>
     <div class="grid-cols-1 grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
       <a
         v-for="(item, key) in contact"

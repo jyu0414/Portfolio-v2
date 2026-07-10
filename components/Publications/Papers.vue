@@ -2,11 +2,11 @@
   <div>
     <indent-article>
       <template v-slot:title>
-        {{ $localize('研究成果', 'Papers') }}
+        <span class="hairline-heading inline-block">{{ $localize('研究成果', 'Papers') }}</span>
       </template>
       <template v-slot:content>
         <div class="space-y-8">
-          <article v-for="item in papers" :key="item._id">
+          <article v-for="item in papers" :key="item._id" v-reveal>
             <paper-item :paper="item" @show="showCitation"/>
           </article>
         </div>
