@@ -22,7 +22,7 @@
       <lazy-wavy-rule class="my-10" :seed="13" />
     </client-only>
     <index-career />
-    <index-activity />
+    <!-- 活動（activity）欄は非表示（2026-07 オーナー指示）。データ取得ごと止めるため描画自体を外す -->
   </div>
 </template>
 
