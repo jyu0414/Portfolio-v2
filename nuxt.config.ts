@@ -4,6 +4,13 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', 'nuxt-jsonld'],
   ssr: true,
+  runtimeConfig: {
+    public: {
+      // portfolio-cms (Firebase) の Firestore プロジェクトID。公開readのため秘密ではないが、
+      // ハードコードせず NUXT_PUBLIC_FIREBASE_PROJECT_ID で上書き可能にする（docs/DESIGN.md §5/§6）
+      firebaseProjectId: 'yuji-portfolio-cms'
+    }
+  },
   css: [
     '@/assets/styles/main.css',
     '@fortawesome/fontawesome-svg-core/styles.css'
