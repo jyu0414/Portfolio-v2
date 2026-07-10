@@ -13,8 +13,14 @@
         />
       </div>
     </div>
+    <client-only>
+      <lazy-index-generative-field class="my-4" />
+    </client-only>
     <index-statement />
     <index-biography />
+    <client-only>
+      <lazy-wavy-rule class="my-10" :seed="13" />
+    </client-only>
     <index-career />
     <index-activity />
   </div>
